@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{% block title %} Dalszöveg Generátor! {% endblock %}</h1>
+<div class="jumbotron">
+    <h1 class="display-4">{{ eloado }}</h1>
+    <p class="lead">
+        {{ generated_lyrics }}
+    </p>
+    <hr class="my-4">
+    <p class="lead">
+    <a href="{{ url_for('generate_lyrics') }}">Kérek egy dalszöveget!</a>
+
+
+<!--    <form action="{{ url_for('handle_data') }}" method="post">-->
+<!--        <select name="eloado" id="eloado">-->
+<!--            <option value="taylor_swift">Taylor Swift</option>-->
+<!--            &lt;!&ndash;        <option value="linkin_park">Linkin Park</option>&ndash;&gt;-->
+<!--            <option value="three_days_grace">Three Days Grace</option>-->
+<!--        </select>-->
+<!--        <input type="submit">-->
+<!--    </form>-->
+
+    <form action="{{ url_for('handle_data') }}" method="post">
+        <select name="eloado" id="eloado">
+            {% for nev, url in eloadok.items() %}
+
+            {% if url %}
+            <option value="{{ url }}">{{ nev }}</option>
+            {% else %}
+            <option value="" disabled>{{ nev }}</option>
+            {% endif %}
+
+            {% endfor %}
+        </select>
+        <input type="submit">
+    </form>
+
+    </p>
+
+</div>
+{% endblock %}
