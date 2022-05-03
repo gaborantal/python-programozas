@@ -20,12 +20,12 @@ def dobokocka(num):
 
 @app.route('/generate_lyrics')
 def generate_lyrics():
-    return render_template("lyrics.html", generated_lyrics=Markup(markov_lyrics.get_lyrics("taylor_swift")))
+    return render_template("lyrics_simple.html", generated_lyrics=Markup(markov_lyrics.get_lyrics("taylor_swift")))
 
 
 @app.route('/generate_lyrics/<string:eloado>')
 def generate_lyrics_by_eloado(eloado):
-    return render_template("lyrics.html", generated_lyrics=Markup(markov_lyrics.get_lyrics(eloado)))
+    return render_template("lyrics_simple.html", generated_lyrics=Markup(markov_lyrics.get_lyrics(eloado)))
 
 
 if __name__ == '__main__':
