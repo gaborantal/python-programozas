@@ -2,7 +2,7 @@ import bs4
 from selenium import webdriver
 from webdriver_manager.firefox import GeckoDriverManager
 
-URL = r"https://www.netpincer.hu/city/szeged"
+URL = r"https://www.foodora.hu/city/szeged"
 
 
 def main():

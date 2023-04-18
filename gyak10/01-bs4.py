@@ -34,7 +34,7 @@ def main():
     print("---")
     for event in soup.find_all("div", attrs={'class': 'home_csatorna_musor_blokk'}):
         if 'Hal a tortán' in event['title']:
-            print(event)
+            # print(event)
             print("Keresett műsor megtalálva!")
             title_time = event['title'].replace('\n', ' ')
             print(f"-- {event['data-channel']} {title_time}")
